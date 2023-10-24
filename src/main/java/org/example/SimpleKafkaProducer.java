@@ -18,7 +18,7 @@ public class SimpleKafkaProducer {
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
         try (KafkaProducer<String, String> producer = new KafkaProducer<>(properties)) {
-            ProducerRecord<String, String> record = new ProducerRecord<String, String>("testKafkaJava", "Olá mundo");
+            ProducerRecord<String, String> record = new ProducerRecord<String, String>("topicoApiJava", "Olá mundo");
 
             producer.send(record);
         }
